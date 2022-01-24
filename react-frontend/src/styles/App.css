@@ -1,0 +1,7 @@
+.App {
+    background-color: #181818;
+}
+
+.classname {
+    all: initial; /* or unset */
+}
