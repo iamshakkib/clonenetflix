@@ -1,0 +1,78 @@
+.contentFont {
+    font-size: large;
+    color: #F7F7F7;
+}
+
+.detailFont {
+    font-size: medium;
+    color: #F7F7F7;
+}
+
+.sfont {
+    font-size: x-large;
+    font-weight: bold;
+    color: #F7F7F7;
+}
+
+.titleFont {
+    color: white;
+    font-weight: bold;
+    margin-left: 1.5vw;
+}
+
+.my-modal .modal-content {
+    background-color: #181818;
+}
+
+.slick {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.slick:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    z-index: 2;
+}
+
+.modal-content  {
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    border-radius: 30px !important; 
+}
+
+.rowStyle {
+    margin-top: 50px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+}
+
+.slick_button {
+    display: inline-flex;
+    position: absolute;
+    flex: 1;
+    z-index: 2;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0);
+    /* color: green; */
+}
+
+.slick_button:hover {
+    z-index: 3;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.75);
+}
