@@ -13,7 +13,7 @@
 
 1. Backend is will run on the port 7777 and I have removed my mongodb cluster db string in your your case create it and paste on the demo one
 
-2. Run it on any IDE (I prefer IntelliJ even It will run on VScode).
+2. Run it on any IDE (I prefer IntelliJ even you could run it on VScode).
 
 3. Swagger UI is used so when it will run on port 7777 the swagger api documentation will be available. For your I am pasting the link :- http://localhost:7777/swagger-ui.html#
 
