@@ -6,8 +6,9 @@
 
 2. I have used React here because it is simple one page frontend. I took help in designing the frontend.
 
-3. I have used mongodb here because i dont see much relationship here. In my previous projects in live_coding_cart_service I have used relational
-4. database but here I did not because not to much relationships and scrumbled data.
+3. I have used mongodb here because i dont see much relationship here. In my previous projects in live_coding_cart_service I have used relational database
+
+4.  here I did not used RDBMS because I do not see much relationships.
 
 ## I have gave my reasons to use these tech-stacks now let see the documentation
 
