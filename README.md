@@ -19,7 +19,7 @@
 
 4. Exception Handled using wrapper of springboot AOP @ControllerAdvice for exceptions.
 
-##How to make the frontend run
+## How to make the frontend run
 
 1. You need to type **yarn install**.
 
