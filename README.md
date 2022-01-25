@@ -23,4 +23,4 @@
 
 1. You need to type **yarn install**.
 
-2.After that **yarn start**.
+2. After that **yarn start**.
