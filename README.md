@@ -16,7 +16,7 @@
 
 2. Run it on any IDE (I prefer IntelliJ even you could run it on VScode).
 
-3. Swagger UI is used so when it will run on port 7777 the swagger api documentation will be available. For your I am pasting the link :- http://localhost:7777/swagger-ui.html#
+3. Swagger UI is used so when the application will run on port 7777 the swagger api documentation will be available. For you, I have pasted the link :- http://localhost:7777/swagger-ui.html#
 
 4. Exception Handled using wrapper of springboot AOP @ControllerAdvice for exceptions.
 
