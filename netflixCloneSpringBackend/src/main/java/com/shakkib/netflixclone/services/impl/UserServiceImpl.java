@@ -6,7 +6,6 @@ import com.shakkib.netflixclone.entities.User;
 import com.shakkib.netflixclone.exceptions.UserDetailsNotFoundException;
 import com.shakkib.netflixclone.services.UserService;
 import lombok.AllArgsConstructor;
-
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
@@ -56,7 +55,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findUserByEmailAndPassWord(String email,String passWord) throws UserDetailsNotFoundException{
-        User user = userDao.findUserByEmailAndPassWord(email, passWord).orElseThrow(()-> new UserDetailsNotFoundException("user not found"));
+        User user = userDao.findUserByEmailAndPassWord(email, passWord).orElseThrow(()
+        -> {
+                LOGGER.error("User details not found for the email: " + email);
+                return new UserDetailsNotFoundException("User details not found for the email : " + email);
+            });
         return user;
     }
     
@@ -65,12 +68,12 @@ public class UserServiceImpl implements UserService {
         LOGGER.info("the user in service layer details :"+user);
         LOGGER.info(email+" + "+passWord+" + "+user.getPassWord());
         boolean flag=true;
-        System.out.println("type"+user.getPassWord().getClass().getName());
+        //System.out.println("type"+user.getPassWord().getClass().getName());
         if(user.getPassWord().compareTo(passWord)==0){
             flag =true;
-            System.out.println("if executed");
+            //System.out.println("if executed");
         }else{
-            System.out.println("else executed");
+            //System.out.println("else executed");
             flag=false;
         }
         if(flag){
