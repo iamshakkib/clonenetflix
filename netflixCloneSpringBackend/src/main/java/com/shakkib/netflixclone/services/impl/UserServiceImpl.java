@@ -86,7 +86,7 @@ public class UserServiceImpl implements UserService {
 
     public boolean joiningMethod(User user) throws UserDetailsNotFoundException{
         LOGGER.info("User details in joning method :"+user);
-        boolean flag = checkUserByEmail(user.getEmail()).or;
+        boolean flag = checkUserByEmail(user.getEmail());
         if(flag)
         return true;
         else return false;    
