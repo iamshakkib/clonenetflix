@@ -79,7 +79,6 @@ public class MovieUserServiceImpl implements MovieUserService {
                 genre = "37";
                 break;
             default:
-                // 기본값 액션영화
                 genre = "28";
                 break;
         }
@@ -104,7 +103,7 @@ public class MovieUserServiceImpl implements MovieUserService {
         String url = "https://api.themoviedb.org/3/movie/popular";
         String api_key = "b4eda142837c245432c018af5c4ec342";
         String sort_by = "vote_count.desc";
-        // RestTemplate 생성
+        // RestTemplate
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("page", page)
@@ -125,7 +124,7 @@ public class MovieUserServiceImpl implements MovieUserService {
         //https://api.themoviedb.org/3/search/movie?api_key=b4eda142837c245432c018af5c4ec342&language=en-US&query=spiderman&page=1&include_adult=false
         String url = "https://api.themoviedb.org/3/search/movie";
         String api_key = "b4eda142837c245432c018af5c4ec342";
-        // RestTemplate 생성
+        // RestTemplate
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("page", page)
@@ -146,12 +145,12 @@ public class MovieUserServiceImpl implements MovieUserService {
         String api_key ="b4eda142837c245432c018af5c4ec342";
         String url = "https://api.themoviedb.org/3/movie/top_rated";
 
-        // RestTemplate 생성
+        // RestTemplate
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("page", page)
                 .queryParam("api_key", api_key)
-                .build(false);    //자동으로 encode해주는 것을 막기 위해 false
+                .build(false);
         String uri = builder.toUriString();
         System.out.println(uri);
         ResponseEntity<String> response =  rt.exchange(
@@ -168,13 +167,13 @@ public class MovieUserServiceImpl implements MovieUserService {
         String language = "ko-KR";
         String url = "https://api.themoviedb.org/3/discover/movie";
 
-        // RestTemplate 생성
+        // RestTemplate
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("page", page)
                 .queryParam("language", language)
                 .queryParam("api_key", api_key)
-                .build(false);    //자동으로 encode해주는 것을 막기 위해 false
+                .build(false);
         String uri = builder.toUriString();
         System.out.println(uri);
         ResponseEntity<String> response =  rt.exchange(
@@ -195,7 +194,7 @@ public class MovieUserServiceImpl implements MovieUserService {
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("page", page)
                 .queryParam("api_key", api_key)
-                .build(false);    //자동으로 encode해주는 것을 막기 위해 false
+                .build(false);
         String uri = builder.toUriString();
         ResponseEntity<String> response =  rt.exchange(
                 uri,
@@ -213,7 +212,7 @@ public class MovieUserServiceImpl implements MovieUserService {
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("api_key", api_key)
-                .build(false);    //자동으로 encode해주는 것을 막기 위해 false
+                .build(false);
         String uri = builder.toUriString();
         ResponseEntity<String> response =  rt.exchange(
                 uri,
@@ -233,7 +232,7 @@ public class MovieUserServiceImpl implements MovieUserService {
         RestTemplate rt = new RestTemplate();
         UriComponents builder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("api_key", api_key)
-                .build(false);    //자동으로 encode해주는 것을 막기 위해 false
+                .build(false);
         String uri = builder.toUriString();
         ResponseEntity<String> response =  rt.exchange(
                 uri,
