@@ -6,22 +6,22 @@ import UserApiService from "../apis/UserApiService";
 
 function Login({ authenticated, location }) {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [passWord, setPassWord] = useState("");
 
   const handleLoginOk = async () => {
     console.log(email);
-    console.log(password);
+    console.log(passWord);
     if (email === "") {
       alert("Enter your email!");
       return;
-    } else if (password === "") {
+    } else if (passWord === "") {
       alert("Please enter a password!");
       return;
     }
     //Create user object
     let user = {
       email: email,
-      password: password,
+      passWord: passWord,
     };
     //login method
     login(user);
@@ -39,7 +39,7 @@ function Login({ authenticated, location }) {
         // console.log(res.data);
         //Save only userid value in user information! No need for the rest!
         sessionStorage.setItem("user", userid);
-        alert("로그인 성공!");
+        alert("login succeed");
         //Send to home path when login is successful
         window.location.href = "http://localhost:3000";
       })
@@ -47,7 +47,7 @@ function Login({ authenticated, location }) {
         console.error("UserApiService.loginOk error :", err);
         alert("Email or password does not match. \nPlease enter it again!");
         setEmail("");
-        setPassword("");
+        setPassWord("");
       });
   };
 
@@ -72,13 +72,13 @@ function Login({ authenticated, location }) {
 
         <div className="form-group">
           <input
-            type="password"
+            type="passWord"
             className="form-control"
-            placeholder="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={({ target: { value } }) => setPassword(value)}
+            placeholder="passWord"
+            name="passWord"
+            id="passWord"
+            value={passWord}
+            onChange={({ target: { value } }) => setPassWord(value)}
           />
         </div>
         <button

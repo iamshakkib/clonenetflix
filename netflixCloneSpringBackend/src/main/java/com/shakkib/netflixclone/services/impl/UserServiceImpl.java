@@ -1,17 +1,21 @@
 package com.shakkib.netflixclone.services.impl;
 
+import javax.servlet.http.HttpSession;
 import com.shakkib.netflixclone.daos.UserDao;
 import com.shakkib.netflixclone.entities.User;
 import com.shakkib.netflixclone.exceptions.UserDetailsNotFoundException;
 import com.shakkib.netflixclone.services.UserService;
 import lombok.AllArgsConstructor;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
+
+    private final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     UserDao userDao;
 
@@ -40,6 +44,49 @@ public class UserServiceImpl implements UserService {
             return flag;
         }
         else throw new UserDetailsNotFoundException("User does not exists with passed details");
+    }
+
+    public boolean checkUserExistsByEmailAndPassword(String email, String passWord) throws UserDetailsNotFoundException{
+        return userDao.existsByEmailAndPassWord(email,passWord).orElseThrow(()-> new UserDetailsNotFoundException("Wrong email and password"));
+    }
+
+    public boolean checkUserByPassWord(String password) throws UserDetailsNotFoundException{
+        boolean flag = userDao.existsByPassWord(password).orElseThrow(()-> new UserDetailsNotFoundException("user does not exists with password"));
+        return flag;
+    }
+
+    public User findUserByEmailAndPassWord(String email,String passWord) throws UserDetailsNotFoundException{
+        User user = userDao.findUserByEmailAndPassWord(email, passWord).orElseThrow(()-> new UserDetailsNotFoundException("user not found"));
+        return user;
+    }
+    
+    public String checkLogin(String email, String passWord, HttpSession httpSession) throws UserDetailsNotFoundException{
+        User user = findUserByEmail(email);
+        LOGGER.info("the user in service layer details :"+user);
+        LOGGER.info(email+" + "+passWord+" + "+user.getPassWord());
+        boolean flag=true;
+        System.out.println("type"+user.getPassWord().getClass().getName());
+        if(user.getPassWord().compareTo(passWord)==0){
+            flag =true;
+            System.out.println("if executed");
+        }else{
+            System.out.println("else executed");
+            flag=false;
+        }
+        if(flag){
+            LOGGER.info("inside the true statement : ");
+            httpSession.setAttribute("USERID_SESSION", user.getEmail());
+            return user.getId();
+        }
+        else throw new UserDetailsNotFoundException("UserName and Password are wrong");
+    }
+
+    public boolean joiningMethod(User user) throws UserDetailsNotFoundException{
+        LOGGER.info("User details in joning method :"+user);
+        boolean flag = checkUserByEmail(user.getEmail());
+        if(flag)
+        return true;
+        else return false;    
     }
    // @Override
    // public List<String> moviesOfUser(String userId) {

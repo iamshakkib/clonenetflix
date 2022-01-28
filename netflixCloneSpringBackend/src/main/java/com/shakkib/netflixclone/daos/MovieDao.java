@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface MovieDao extends MongoRepository<Movie,String> {
     Optional<List<Movie>> findAllByUserId(String id);
+    List<Movie> findAll
 }

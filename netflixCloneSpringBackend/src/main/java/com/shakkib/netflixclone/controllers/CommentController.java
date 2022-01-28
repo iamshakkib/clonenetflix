@@ -20,10 +20,10 @@ public class CommentController {
 
     @PostMapping("/write")
     public ResponseEntity<CommentDTO> writeComment(@RequestBody CommentDTO commentDTO){
-        Comment comment = convertCommentDTOTocommentEntity(commentDTO);
+        Comment comment = convertCommentDTOToCommentEntity(commentDTO);
         Comment myComment = commentServiceImpl.writeComment(comment);
         CommentDTO myCommentDTO = convertCommentToCommentDTO(myComment);
-        return ResponseEntity.ok(commentDTO);
+        return ResponseEntity.ok(myCommentDTO);
     }
 
     @GetMapping("/read")
@@ -56,10 +56,10 @@ public class CommentController {
         return ResponseEntity.ok(commentDTO);
     }
 
-    // i have written my own logic to convert to dto i could have used model mapper
-    // but sometime its fails.
+    /* i have written my own logic to convert to dto to entity or vice verse, I could have used model mapper
+     but sometime its fails.*/
 
-    private Comment convertCommentDTOTocommentEntity(CommentDTO commentDTO){
+    private Comment convertCommentDTOToCommentEntity(CommentDTO commentDTO){
         return new Comment(commentDTO.getId(), commentDTO.getUserId(), commentDTO.getUserEmail(), commentDTO.getCommentAt(),commentDTO.getContent());
     }
 

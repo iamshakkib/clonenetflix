@@ -20,7 +20,6 @@ import java.util.List;
 @RequestMapping("/user/v1/mylist")
 public class MovieController {
 
-    @Autowired
     private MovieServiceImpl movieServiceImpl;
 
     @PostMapping("/add")
