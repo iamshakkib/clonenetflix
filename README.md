@@ -2,7 +2,7 @@
 
 ## Here, I have cloned Netflix using Springboot, React and MongoDB lets understand why ?
 
-### This is the most emotional reason which motivated me for developing this project is :- I didnt find tutorial for Netflix-Clone in Springboot sadly ! So i created on my own.
+### This is the most emotional reason which motivated me for developing this project is :- I didnt find tutorial for Netflix-Clone using Springboot in YouTube sadly ! So i created on my own.
 
 ## Moving on to the practical reasons
 
