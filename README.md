@@ -2,8 +2,9 @@
 
 ## Here, I have cloned Netflix using Springboot, React and MongoDB lets understand why ?
 
-### This is the most emotional reason which motivated me for developing this project is :- I didnt find tutorial for Netflix-Clone in Springboot sadly ! So i 
-### created on my own.
+### This is the most emotional reason which motivated me for developing this project is :- I didnt find tutorial for Netflix-Clone in Springboot sadly ! So i created on my own.
+
+## Moving on to the practical reasons
 
 1. I wanted to showcase my skills, I have used Springboot because I wanted to use the best coding practices and made it as **loosely coupled** as possible and wanted to implement the solid design principles and Aspect Oriented Programming. As I have used for handling Exceptions I know it is not core AOP but springboot have a wrapper on it. I have followed the Single Responsibilty Principle and also the Interface Segregation principle.
 
