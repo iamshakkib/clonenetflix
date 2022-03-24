@@ -8,11 +8,9 @@
 
 1. I wanted to showcase my skills, I have used Springboot because I wanted to use the best coding practices and made it as **loosely coupled** as possible and wanted to implement the solid design principles and Aspect Oriented Programming. As I have used for handling Exceptions I know it is not core AOP but springboot have a wrapper on it. I have followed the Single Responsibilty Principle and also the Interface Segregation principle.
 
-2. I have used React here because it is simple one page frontend. I took help in designing the frontend.
+2. I have used React here because it is simple one page frontend.I have created this netflix clone by taking help in developing the frontend part from kim and it is running fine, login is perfect but userlist for saved movie is not working because through frontend I am not able to provide the data required to fetch for a user .
 
-3. I have used mongodb here because i dont see much relationship here. In my previous projects in live_coding_cart_service I have used relational database
-
-4.  here I did not used RDBMS because I do not see much relationships.
+3. I have used mongodb here because I am consuming the external apis and I dont know how the schemaa would look like, this is why I have not used sql here. In my previous projects in live_coding_cart_service I have used relational database
 
 ## I have gave my reasons to use these tech-stacks now let see the documentation
 
