@@ -22,8 +22,15 @@
 
 4. Exception Handled using wrapper of springboot AOP @ControllerAdvice for exceptions.
 
-## How to make the frontend run
+## How to make the frontend run (in 2024)
 
-1. You need to type **yarn install**.
+1. Delete node modules, yarn.lock, package-lock.json
 
-2. After that **yarn start**.
+2. Type **yarn**
+
+3. After that **yarn start**.
+
+if you see an error with browser can't connect then use this command and start again.
+**export NODE_OPTIONS=--openssl-legacy-provider**
+a) yarn
+b) yarn start 
